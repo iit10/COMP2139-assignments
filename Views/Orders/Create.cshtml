@@ -1,0 +1,50 @@
+﻿@using SmartInventory3.Models
+@model OrderViewModel
+
+
+@{
+    ViewData["Title"] = "Place Order";
+}
+<h2>Place Your Order</h2>
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="GuestName"></label>
+        <input asp-for="GuestName" class="form-control" />
+        <span asp-validation-for="GuestName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GuestEmail"></label>
+        <input asp-for="GuestEmail" class="form-control" />
+        <span asp-validation-for="GuestEmail" class="text-danger"></span>
+    </div>
+    <h3>Order Items</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Available</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach(var item in Model.OrderItems)
+        {
+            // Retrieve product details from ViewBag (populated in the controller).
+            var product = ((IEnumerable<SmartInventory3.Models.Product>)ViewBag.Products)
+                .FirstOrDefault(p => p.Id == item.ProductId);
+            <tr>
+                <td>@product?.Name</td>
+                <td>@product?.Quantity</td>
+                <td>
+                    <input type="hidden" name="OrderItems[@Model.OrderItems.IndexOf(item)].ProductId" value="@item.ProductId" />
+                    <input type="number" name="OrderItems[@Model.OrderItems.IndexOf(item)].Quantity" class="form-control" value="@item.Quantity" min="0" />
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Submit Order</button>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+@inject SignInManager<IdentityUser> SignInManager
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Smart Inventory</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="/">Smart Inventory</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Products">Inventory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Orders/Create">Place Order</a>
+                </li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark"
+                           asp-area="Identity"
+                           asp-page="/Account/Manage/Index"
+                           title="Manage your Profile"><i class="fa-solid fa-id-card"></i> Profile</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <form asp-area="Identity" asp-page="/Account/Logout" method="post">
+                            <button type="submit" class="nav-link btn btn-link text-dark" style="cursor: pointer"> Logout</button>
+                        </form>
+                    </li>
+
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark"
+                           asp-area="Identity"
+                           asp-page="/Account/Login">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark"
+                           asp-area="Identity"
+                           asp-page="/Account/Register">
+                            <i class="fa-solid fa-user-plus"></i> Register</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="container mt-3">
+    @RenderBody()
+</div>
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">Smart Inventory System by Group 155</span>
+    </div>
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+@RenderSection("Scripts", required: false)
+</body>
+</html>

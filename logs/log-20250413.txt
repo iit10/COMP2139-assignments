@@ -1,0 +1,10 @@
+2025-04-13 23:43:02.380 -04:00 [INF] Applying database migrations if needed...
+2025-04-13 23:43:09.077 -04:00 [INF] Database migrations applied successfully
+2025-04-13 23:43:09.610 -04:00 [INF] Starting SmartInventory3 web application
+2025-04-13 23:43:10.284 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-04-13 23:43:10.846 -04:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 385.4744 ms
+2025-04-13 23:43:16.284 -04:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 49.4244 ms
+2025-04-13 23:43:18.227 -04:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 8.9223 ms
+2025-04-13 23:43:20.655 -04:00 [INF] HTTP GET /Orders/Create responded 200 in 1666.7832 ms
+2025-04-13 23:43:21.829 -04:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 3.1115 ms
+2025-04-13 23:43:22.893 -04:00 [INF] HTTP GET /Identity/Account/Register responded 200 in 60.8187 ms

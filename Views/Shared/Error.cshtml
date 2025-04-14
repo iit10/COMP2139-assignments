@@ -1,0 +1,27 @@
+﻿@model SmartInventory3.Models.ErrorViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Error @Model.StatusCode - Smart Inventory</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f2f2f2; }
+        .error-container { background: white; padding: 20px; border-radius: 5px; max-width: 600px; margin: auto; text-align: center; }
+        h1 { color: #d9534f; }
+        a { text-decoration: none; color: #337ab7; }
+    </style>
+</head>
+<body>
+<div class="error-container">
+    <h1>Oops! Something went wrong.</h1>
+    <p>@Model.Message</p>
+    <p><strong>Status Code:</strong> @Model.StatusCode</p>
+    @if (!string.IsNullOrEmpty(Model.RequestId))
+    {
+        <p><strong>Request ID:</strong> @Model.RequestId</p>
+    }
+    <a href="@Url.Action("Index", "Home")">Return to Home Page</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@model SmartInventory3.Models.Order
+@{
+    ViewData["Title"] = "Order Summary";
+}
+<h2>Order Summary</h2>
+<p><strong>Order ID:</strong> @Model.Id</p>
+<p><strong>Order Date:</strong> @Model.OrderDate</p>
+<p><strong>Guest Name:</strong> @Model.GuestName</p>
+<p><strong>Guest Email:</strong> @Model.GuestEmail</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model.OrderItems)
+    {
+        <tr>
+            <td>@item.Product?.Name</td>
+            <td>@item.Product?.Price.ToString("C")</td>
+            <td>@item.Quantity</td>
+            <td>@(item.Product != null ? (item.Product.Price * item.Quantity).ToString("C") : "$0")</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<p><strong>Total Price:</strong> @Model.TotalPrice.ToString("C")</p>
+<a href="/" class="btn btn-primary">Return to Home</a>

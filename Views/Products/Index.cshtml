@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SmartInventory3.Models.Product>
+
+<div class="container mt-4">
+    <h2>Product Inventory</h2>
+
+    <!-- Search bar (AJAX) -->
+    <div class="mb-3">
+        <input type="text" id="searchInput" placeholder="Search products..." class="form-control" />
+    </div>
+
+    <!-- Loader spinner -->
+    <div id="loader" class="text-center mb-3" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Table results container -->
+    <div id="productResults">
+        @await Html.PartialAsync("_ProductListPartial", Model)
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Category?.Name</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@item.Quantity</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/ajax-search-jquery.js"></script>
+}
