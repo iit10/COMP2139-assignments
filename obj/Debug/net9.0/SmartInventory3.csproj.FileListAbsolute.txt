@@ -1266,3 +1266,4 @@ C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory
 C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\obj\Debug\net9.0\SmartInventory3.pdb
 C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\obj\Debug\net9.0\SmartInventory3.genruntimeconfig.cache
 C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\obj\Debug\net9.0\ref\SmartInventory3.dll
+C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\obj\Debug\net9.0\SmartInventory3.sourcelink.json

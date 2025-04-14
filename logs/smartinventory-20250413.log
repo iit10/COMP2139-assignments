@@ -8,3 +8,113 @@
 2025-04-13 23:43:20.655 -04:00 [INF] HTTP GET /Orders/Create responded 200 in 1666.7832 ms
 2025-04-13 23:43:21.829 -04:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 3.1115 ms
 2025-04-13 23:43:22.893 -04:00 [INF] HTTP GET /Identity/Account/Register responded 200 in 60.8187 ms
+2025-04-13 23:53:46.896 -04:00 [INF] Applying database migrations if needed...
+2025-04-13 23:53:49.910 -04:00 [INF] Database migrations applied successfully
+2025-04-13 23:53:50.114 -04:00 [INF] Starting SmartInventory3 web application
+2025-04-13 23:53:50.445 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-04-13 23:53:50.790 -04:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 235.5167 ms
+2025-04-13 23:53:54.710 -04:00 [INF] HTTP GET /Orders/Create responded 200 in 1651.4577 ms
+2025-04-13 23:54:40.503 -04:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 16.5986 ms
+2025-04-13 23:54:43.891 -04:00 [INF] HTTP GET /Orders/Create responded 200 in 145.9198 ms
+2025-04-13 23:54:45.169 -04:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 6.5586 ms
+2025-04-13 23:54:46.781 -04:00 [INF] HTTP GET /Identity/Account/Register responded 200 in 494.7160 ms
+2025-04-13 23:55:08.684 -04:00 [INF] User created a new account with password.
+2025-04-13 23:55:09.763 -04:00 [ERR] Exception occurred while sending email.
+PostmarkDotNet.Exceptions.PostmarkValidationException: While your account is pending approval, all recipient addresses must share the same domain as the 'From' address. The domain of the 'From' address is 'georgebrown.ca', but you are attempting to send email to the following domain(s): 'gmail.com'.
+   at PostmarkDotNet.PostmarkClientBase.ProcessRequestAsync[TRequestBody,TResponse](String apiPath, HttpMethod verb, TRequestBody message)
+   at PostmarkDotNet.PostmarkClient.SendMessageAsync(PostmarkMessage message)
+   at SmartInventory3.Services.EmailSender.SendEmailAsync(String email, String subject, String message) in C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\Services\EmailSender.cs:line 43
+2025-04-13 23:55:09.841 -04:00 [ERR] HTTP POST /Identity/Account/Register responded 500 in 2495.8684 ms
+PostmarkDotNet.Exceptions.PostmarkValidationException: While your account is pending approval, all recipient addresses must share the same domain as the 'From' address. The domain of the 'From' address is 'georgebrown.ca', but you are attempting to send email to the following domain(s): 'gmail.com'.
+   at PostmarkDotNet.PostmarkClientBase.ProcessRequestAsync[TRequestBody,TResponse](String apiPath, HttpMethod verb, TRequestBody message)
+   at PostmarkDotNet.PostmarkClient.SendMessageAsync(PostmarkMessage message)
+   at SmartInventory3.Services.EmailSender.SendEmailAsync(String email, String subject, String message) in C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\Services\EmailSender.cs:line 43
+   at SmartInventory3.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync(String returnUrl) in C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\Areas\Identity\Pages\Account\Register.cshtml.cs:line 134
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.ExecutorFactory.GenericTaskHandlerMethod.Convert[T](Object taskAsObject)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.ExecutorFactory.GenericTaskHandlerMethod.Execute(Object receiver, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeHandlerMethodAsync()
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeNextPageFilterAsync()
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.Rethrow(PageHandlerExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-04-13 23:55:09.864 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+PostmarkDotNet.Exceptions.PostmarkValidationException: While your account is pending approval, all recipient addresses must share the same domain as the 'From' address. The domain of the 'From' address is 'georgebrown.ca', but you are attempting to send email to the following domain(s): 'gmail.com'.
+   at PostmarkDotNet.PostmarkClientBase.ProcessRequestAsync[TRequestBody,TResponse](String apiPath, HttpMethod verb, TRequestBody message)
+   at PostmarkDotNet.PostmarkClient.SendMessageAsync(PostmarkMessage message)
+   at SmartInventory3.Services.EmailSender.SendEmailAsync(String email, String subject, String message) in C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\Services\EmailSender.cs:line 43
+   at SmartInventory3.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync(String returnUrl) in C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\Areas\Identity\Pages\Account\Register.cshtml.cs:line 134
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.ExecutorFactory.GenericTaskHandlerMethod.Convert[T](Object taskAsObject)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.ExecutorFactory.GenericTaskHandlerMethod.Execute(Object receiver, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeHandlerMethodAsync()
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeNextPageFilterAsync()
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.Rethrow(PageHandlerExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-04-13 23:55:22.726 -04:00 [INF] HTTP GET /Identity/Account/Register responded 200 in 3.5671 ms
+2025-04-13 23:55:32.884 -04:00 [INF] User created a new account with password.
+2025-04-13 23:55:33.144 -04:00 [ERR] Exception occurred while sending email.
+PostmarkDotNet.Exceptions.PostmarkValidationException: The 'From' address you supplied (noreply@georgebrown.ca) is not a Sender Signature on your account. Please add and confirm this address in order to be able to use it in the 'From' field of your messages.
+   at PostmarkDotNet.PostmarkClientBase.ProcessRequestAsync[TRequestBody,TResponse](String apiPath, HttpMethod verb, TRequestBody message)
+   at PostmarkDotNet.PostmarkClient.SendMessageAsync(PostmarkMessage message)
+   at SmartInventory3.Services.EmailSender.SendEmailAsync(String email, String subject, String message) in C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\Services\EmailSender.cs:line 43
+2025-04-13 23:55:33.153 -04:00 [ERR] HTTP POST /Identity/Account/Register responded 500 in 518.2596 ms
+PostmarkDotNet.Exceptions.PostmarkValidationException: The 'From' address you supplied (noreply@georgebrown.ca) is not a Sender Signature on your account. Please add and confirm this address in order to be able to use it in the 'From' field of your messages.
+   at PostmarkDotNet.PostmarkClientBase.ProcessRequestAsync[TRequestBody,TResponse](String apiPath, HttpMethod verb, TRequestBody message)
+   at PostmarkDotNet.PostmarkClient.SendMessageAsync(PostmarkMessage message)
+   at SmartInventory3.Services.EmailSender.SendEmailAsync(String email, String subject, String message) in C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\Services\EmailSender.cs:line 43
+   at SmartInventory3.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync(String returnUrl) in C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\Areas\Identity\Pages\Account\Register.cshtml.cs:line 134
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.ExecutorFactory.GenericTaskHandlerMethod.Convert[T](Object taskAsObject)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.ExecutorFactory.GenericTaskHandlerMethod.Execute(Object receiver, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeHandlerMethodAsync()
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeNextPageFilterAsync()
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.Rethrow(PageHandlerExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-04-13 23:55:33.212 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+PostmarkDotNet.Exceptions.PostmarkValidationException: The 'From' address you supplied (noreply@georgebrown.ca) is not a Sender Signature on your account. Please add and confirm this address in order to be able to use it in the 'From' field of your messages.
+   at PostmarkDotNet.PostmarkClientBase.ProcessRequestAsync[TRequestBody,TResponse](String apiPath, HttpMethod verb, TRequestBody message)
+   at PostmarkDotNet.PostmarkClient.SendMessageAsync(PostmarkMessage message)
+   at SmartInventory3.Services.EmailSender.SendEmailAsync(String email, String subject, String message) in C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\Services\EmailSender.cs:line 43
+   at SmartInventory3.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync(String returnUrl) in C:\Users\owner\Documents\COMP2139-Assignment2\SmartInventory3 (1)\SmartInventory3\Areas\Identity\Pages\Account\Register.cshtml.cs:line 134
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.ExecutorFactory.GenericTaskHandlerMethod.Convert[T](Object taskAsObject)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.ExecutorFactory.GenericTaskHandlerMethod.Execute(Object receiver, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeHandlerMethodAsync()
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeNextPageFilterAsync()
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.Rethrow(PageHandlerExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-04-13 23:56:04.521 -04:00 [INF] HTTP GET /Identity/Account/Register responded 200 in 6.9086 ms
